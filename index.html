@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>exam</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+
+  <div class="templates">
+
+    <!-- USER TEMPLATE  -->
+    <ol class="user__list  list">
+
+      <template class="user__template" >
+
+        <li class="user__item item" >
+          <span class="user__id">user id</span>
+
+          <h2 class="user__title">username</h2>
+
+          <h3 class="user__name">user name</h3>
+
+          <a class="user__email" href="#">user email</a>
+
+          <address class="user__address">
+            <a class="user__address-link" target="_ blank" href="#">user address</a>
+            <a class="user__address-geo link" target="_ blank" href="#"> user geo</a>
+          </address>
+
+          <a class="user__phone link" href="#">user phone</a>
+
+          <a class="user__website link" href="#" target="_blank"> user website</a>
+
+          <strong class="company-info"> Company Info </strong>
+
+          <h3 class="user__company-name">user company</h3>
+
+          <p class="user__company-phrase">user company phrase</p>
+
+          <p class="user__company-bs">user company bs</p>
+
+        </li>
+
+      </template>
+
+    </ol>
+
+    <!-- POST TEMPLATE  -->
+    <ol class="post__list list">
+
+      <template class="post__template">
+
+        <li class="post__item item">
+
+          <span class="post__id id">user id</span>
+
+          <h3 class="post__title title">post title</h3>
+
+          <p class="post__text">post text</p>
+
+        </li>
+
+      </template>
+
+    </ol>
+
+    <!-- COMMENT TEMPLATE  -->
+    <ol class="comment__list list">
+
+      <img class="loading" src="./images/spinner.svg" alt="spinner">
+
+      <template class="comment__template">
+
+        <li class="comment__item item">
+
+          <span class="comment__id id">user id</span>
+
+          <h3 class="comment__title title">post title</h3>
+
+          <a href="#" class="comment__email"></a>
+
+          <p class="comment__text">post text</p>
+
+        </li>
+
+      </template>
+
+    </ol>
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
