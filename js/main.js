@@ -1,11 +1,11 @@
-const elUserList = document.querySelector('.user__list');
-const elUserTemplate = document.querySelector(".user__template").content;
+const elUserList = document.querySelector('.user-list');
+const elUserTemplate = document.querySelector(".user-list__template").content;
 
-const elPostList = document.querySelector('.post__list');
-const elPostTemplate = document.querySelector(".post__template").content;
+const elPostList = document.querySelector('.post-list');
+const elPostTemplate = document.querySelector(".post-list__template").content;
 
-const elCommentList = document.querySelector('.comment__list');
-const elCommentTemplate = document.querySelector(".comment__template").content;
+const elCommentList = document.querySelector('.comment-list');
+const elCommentTemplate = document.querySelector(".comment-list__template").content;
 
 
 function renderUser(arr, element) {
@@ -21,31 +21,31 @@ function renderUser(arr, element) {
     let geoLocation = `${item.address.geo.lat}, ${item.address.geo.lng}`;
 
     const clonedTemplate = elUserTemplate.cloneNode(true);
-    clonedTemplate.querySelector(".user__id").textContent = item.id;
-    clonedTemplate.querySelector(".user__item").dataset.userId = item.id;
+    clonedTemplate.querySelector(".user-list__id").textContent = item.id;
+    clonedTemplate.querySelector(".user-list__item").dataset.userId = item.id;
 
-    clonedTemplate.querySelector(".user__title").textContent = item.username;
+    clonedTemplate.querySelector(".user-list__title").textContent = item.username;
 
-    clonedTemplate.querySelector(".user__name").textContent = item.name;
+    clonedTemplate.querySelector(".user-list__name").textContent = item.name;
 
-    clonedTemplate.querySelector(".user__email").textContent = item.email;
-    clonedTemplate.querySelector(".user__email").href = `mailto: ${item.email}`;
+    clonedTemplate.querySelector(".user-list__email").textContent = item.email;
+    clonedTemplate.querySelector(".user-list__email").href = `mailto: ${item.email}`;
 
-    clonedTemplate.querySelector(".user__address-link").textContent = "Address";
-    clonedTemplate.querySelector(".user__address-link").href = `${location} +  ${addressLink}`;
+    clonedTemplate.querySelector(".user-list__address-link").textContent = "Address";
+    clonedTemplate.querySelector(".user-list__address-link").href = `${location} +  ${addressLink}`;
 
-    clonedTemplate.querySelector(".user__address-geo").textContent = "Geo location";
-    clonedTemplate.querySelector(".user__address-geo").href = `${location} + ${geoLocation}`;
+    clonedTemplate.querySelector(".user-list__address-geo").textContent = "Geo location";
+    clonedTemplate.querySelector(".user-list__address-geo").href = `${location} + ${geoLocation}`;
 
-    clonedTemplate.querySelector(".user__phone").textContent = `Phone number`;
-    clonedTemplate.querySelector(".user__phone").href = `tel: ${item.phone}`;
+    clonedTemplate.querySelector(".user-list__phone").textContent = `Phone number`;
+    clonedTemplate.querySelector(".user-list__phone").href = `tel: ${item.phone}`;
 
-    clonedTemplate.querySelector(".user__website").textContent = item.website;
-    clonedTemplate.querySelector(".user__website").href = `https:// + ${item.website}`;
+    clonedTemplate.querySelector(".user-list__website").textContent = item.website;
+    clonedTemplate.querySelector(".user-list__website").href = `https:// + ${item.website}`;
 
-    clonedTemplate.querySelector(".user__company-name").textContent = item.company.name;
-    clonedTemplate.querySelector(".user__company-phrase").textContent = item.company.catchPhrase;
-    clonedTemplate.querySelector(".user__company-bs").textContent = item.company.bs;
+    clonedTemplate.querySelector(".user-list__company-name").textContent = item.company.name;
+    clonedTemplate.querySelector(".user-list__company-phrase").textContent = item.company.catchPhrase;
+    clonedTemplate.querySelector(".user-list__company-bs").textContent = item.company.bs;
 
     fragmentUser.appendChild(clonedTemplate);
   })
@@ -64,13 +64,13 @@ function renderPost(arr, element){
 
     const clonedPostTemplate = elPostTemplate.cloneNode(true);
 
-    clonedPostTemplate.querySelector(".post__item").dataset.postId = item.id;
+    clonedPostTemplate.querySelector(".post-list__item").dataset.postId = item.id;
 
-    clonedPostTemplate.querySelector(".post__id").textContent = item.id;
+    clonedPostTemplate.querySelector(".post-list__id").textContent = item.id;
 
-    clonedPostTemplate.querySelector(".post__title").textContent = item.title;
+    clonedPostTemplate.querySelector(".post-list__title").textContent = item.title;
 
-    clonedPostTemplate.querySelector(".post__text").textContent = item.body;
+    clonedPostTemplate.querySelector(".post-list__text").textContent = item.body;
 
     fragmentPost.appendChild(clonedPostTemplate);
   })
@@ -88,15 +88,15 @@ function renderComment(arr, element){
 
     const clonedCommentTemplate = elCommentTemplate.cloneNode(true);
 
-    clonedCommentTemplate.querySelector(".comment__item").dataset.commentId = item.id;
+    clonedCommentTemplate.querySelector(".comment-list__item").dataset.commentId = item.id;
 
-    clonedCommentTemplate.querySelector(".comment__id").textContent = item.id;
+    clonedCommentTemplate.querySelector(".comment-list__id").textContent = item.id;
 
-    clonedCommentTemplate.querySelector(".comment__title").textContent = item.name;
+    clonedCommentTemplate.querySelector(".comment-list__title").textContent = item.name;
 
-    clonedCommentTemplate.querySelector(".comment__email").href = `mailto: ${item.email}`;
+    clonedCommentTemplate.querySelector(".comment-list__email").href = `mailto: ${item.email}`;
 
-    clonedCommentTemplate.querySelector(".comment__text").textContent = item.body;
+    clonedCommentTemplate.querySelector(".comment-list__text").textContent = item.body;
 
     fragmentComment.appendChild(clonedCommentTemplate);
   })
@@ -117,7 +117,7 @@ getUser();
 
 elUserList.addEventListener("click", async (evt) => {
 
-  if(evt.target.matches(".user__item")){
+  if(evt.target.matches(".user-list__item")){
 
     let userId = evt.target.dataset.userId;
 
@@ -136,7 +136,7 @@ elUserList.addEventListener("click", async (evt) => {
 
 elPostList.addEventListener("click", async (evt) => {
 
-  if(evt.target.matches(".post__item")){
+  if(evt.target.matches(".post-list__item")){
 
     let postId = evt.target.dataset.postId;
 
